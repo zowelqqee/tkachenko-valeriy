@@ -9,7 +9,7 @@ export const siteConfig: SiteConfig = {
   navLinks: [
     // "Афиша" is a separate CTA button in the Header — keep anchor links here only
     { label: 'О нас', href: '/#about' },
-    { label: 'Фото', href: '/#gallery' },
+    { label: 'Галерея', href: '/#gallery' },
     { label: 'Контакты', href: '/#contacts' },
   ],
 
