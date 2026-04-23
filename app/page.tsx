@@ -11,10 +11,21 @@ import { events } from '@/data/events'
 import { getFeaturedEvent, getPreviewEvents } from '@/lib/events'
 
 export default function HomePage() {
+  const featuredEvent = getFeaturedEvent(events)
+  const previewEvents = getPreviewEvents(events, 3)
+
   return (
-    <main style={{ padding: 40, fontFamily: 'sans-serif' }}>
-      <h1>Site works</h1>
-      <p>Minimal test page</p>
-    </main>
+    <>
+      <Header />
+      <main className="flex-1">
+        <Hero config={siteConfig} />
+        {featuredEvent && <FeaturedEvent event={featuredEvent} />}
+        <EventsCatalogPreview events={previewEvents} />
+        <AboutSection config={siteConfig} />
+        <GallerySection />
+        <ContactSection config={siteConfig} />
+      </main>
+      <Footer />
+    </>
   )
 }
