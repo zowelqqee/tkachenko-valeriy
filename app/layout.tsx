@@ -23,9 +23,9 @@ export const metadata: Metadata = {
   },
   description: siteConfig.siteDescription,
   icons: {
-    icon: '/favicon.png',
-    shortcut: '/favicon.png',
-    apple: '/favicon.png',
+    icon: '/favicon.ico?v=5',
+    shortcut: '/favicon.ico?v=5',
+    apple: '/apple-touch-icon.png?v=5',
   },
   openGraph: {
     type: 'website',
