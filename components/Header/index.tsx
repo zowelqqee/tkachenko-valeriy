@@ -133,15 +133,17 @@ export function Header() {
           </div>
 
           {/* Quick contact */}
-          <div className="px-4 pb-6 border-t border-border pt-4">
-            <a
-              href={`tel:${siteConfig.company.contact.phone}`}
-              className="flex items-center gap-3 text-muted hover:text-white transition-colors text-sm"
-            >
-              <PhoneIcon />
-              {siteConfig.company.contact.phone}
-            </a>
-          </div>
+          {siteConfig.company.contact.phone && (
+            <div className="px-4 pb-6 border-t border-border pt-4">
+              <a
+                href={`tel:${siteConfig.company.contact.phone.replace(/[^\d+]/g, '')}`}
+                className="flex items-center gap-3 text-muted hover:text-white transition-colors text-sm"
+              >
+                <PhoneIcon />
+                {siteConfig.company.contact.phone}
+              </a>
+            </div>
+          )}
         </div>
       </div>
     </>

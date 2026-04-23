@@ -44,7 +44,7 @@ export const siteConfig: SiteConfig = {
   ],
 
   company: {
-    name: 'Продюсерский центр Валерия Ткаченко',
+    name: 'ИП Ткаченко Валерий Викторович',
     shortName: 'ПЦ Ткаченко',
     tagline: 'Концерты, фестивали, театр и городские проекты.',
     description: [
@@ -99,13 +99,11 @@ export const siteConfig: SiteConfig = {
         'Московский государственный институт культуры — режиссура театрализованных представлений и праздников.',
       ],
     },
+    inn: '780420527223',
+    legalAddress: 'Санкт-Петербург, ул. Радищева, офис 213',
     contact: {
-      phone: '+7 (495) 123-45-67',
-      email: 'info@tkachenko-valeriy.ru',
-      address: 'Москва, Кожевническая ул., д. 1',
-      telegram: 'https://t.me/tkachenko_concerts',
-      vk: 'https://vk.com/tkachenko_concerts',
-      instagram: 'https://instagram.com/tkachenko_concerts',
+      phone: '+7 (921) 780 40 70',
+      address: 'Санкт-Петербург, ул. Радищева, офис 213',
     },
   },
 }

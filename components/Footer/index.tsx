@@ -49,7 +49,7 @@ export function Footer() {
             <div className="flex flex-col gap-2">
               {company.contact.phone && (
                 <a
-                  href={`tel:${company.contact.phone.replace(/\s/g, '')}`}
+                  href={`tel:${company.contact.phone.replace(/[^\d+]/g, '')}`}
                   className="text-[#AAAAAA] text-sm hover:text-white transition-colors"
                 >
                   {company.contact.phone}
