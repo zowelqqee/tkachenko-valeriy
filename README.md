@@ -1,36 +1,93 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Продюсерский центр Ткаченко — сайт
 
-## Getting Started
+Next.js 16 · TypeScript · Tailwind CSS v4 · App Router · Fully static
 
-First, run the development server:
+---
+
+## Запуск
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev       # http://localhost:3000
+npm run build     # production build
+npm run start     # serve production build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Как добавить новое событие
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Откройте `data/events.ts` и добавьте объект в массив `events`:
 
-## Learn More
+```typescript
+{
+  id: 'evt-008',              // уникальный ID
+  slug: 'my-new-event',       // уникальный slug (используется в URL)
+  title: 'НАЗВАНИЕ СОБЫТИЯ',
+  shortTitle: 'Краткое',      // для карточек (необязательно)
+  description: 'Описание...',
+  genre: 'Рок',               // Рок | Джаз | Поп | Стендап | Классика | Блюз
+  date: '2026-09-20',         // YYYY-MM-DD
+  time: '20:00',              // HH:MM
+  datetimeISO: '2026-09-20T20:00:00+03:00', // полный ISO для сортировки
+  venue: 'Название площадки',
+  city: 'Москва',             // необязательно
+  priceFrom: 2500,            // число, рублей
+  currency: 'RUB',
+  ageRating: '16+',           // 0+ | 6+ | 12+ | 16+ | 18+
+  buyTicketUrl: 'https://...',
+  posterImage: '/images/posters/my-new-event.jpg', // файл в public/
+  featured: false,            // true — выводит в главный слот "Ближайшее событие"
+  published: true,            // false — скрывает с сайта
+},
+```
 
-To learn more about Next.js, take a look at the following resources:
+Добавьте постер в `public/images/posters/<slug>.jpg`.
+Если постера нет — компонент покажет цветной градиент по жанру.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Как изменить текст сайта
 
-## Deploy on Vercel
+Все тексты и конфигурация находятся в `data/site.ts`:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- `heroTitle` / `heroTitleAccent` / `heroSubtitle` — Hero секция
+- `company.description[]` — текст блока «О нас»
+- `stats[]` — цифры (200+, 10 лет…)
+- `company.contact` — телефон, email, адрес, соцсети
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## Как изменить юридические страницы
+
+Редактируйте `data/legal.ts`. Каждая страница — массив секций с заголовком и абзацами.
+
+---
+
+## Добавление фотографий в галерею
+
+Поместите файлы в `public/images/gallery/`:
+```
+photo-1.jpg  photo-2.jpg  photo-3.jpg  ...  photo-6.jpg
+```
+
+Компонент `GallerySection` сейчас показывает плейсхолдеры.
+Раскомментируйте использование `<Image>` в `components/GallerySection/index.tsx`
+и передайте реальные пути — они уже описаны в массиве `GALLERY_PHOTOS`.
+
+---
+
+## Структура проекта
+
+```
+data/          — весь контент (события, тексты, юридические страницы)
+lib/           — чистые функции (фильтры, сортировка, форматирование дат)
+types/         — TypeScript интерфейсы
+components/    — переиспользуемые UI-компоненты
+app/           — страницы (App Router)
+  page.tsx           — Главная
+  afisha/page.tsx    — Афиша (поиск + фильтры)
+  oplata/page.tsx    — Способы оплаты
+  vozvrat-biletov/   — Возврат билетов
+public/images/ — постеры и фотографии
+```
