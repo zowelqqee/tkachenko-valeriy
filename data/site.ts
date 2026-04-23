@@ -4,7 +4,7 @@ export const siteConfig: SiteConfig = {
   siteName: 'Продюсерский центр Валерия Ткаченко',
   siteDescription:
     'Продюсерский центр Валерия Ткаченко с 2010 года организует концерты, фестивали, театральные и городские проекты в Санкт-Петербурге.',
-  siteUrl: 'https://tkachenko-valeriy.ru',
+  siteUrl: 'https://www.tkachenko-valeriy.ru',
 
   navLinks: [
     // "Афиша" is a separate CTA button in the Header — keep anchor links here only
