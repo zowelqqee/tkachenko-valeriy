@@ -364,4 +364,23 @@ export const events: Event[] = [
     featured: false,
     published: true,
   },
+  {
+    id: 'evt-20270402-tsveti',
+    slug: 'tsveti-2027-04-02',
+    title: 'Концерт группы "Цветы"',
+    description:
+      'Концерт группы "Цветы" пройдет 2 апреля 2027 года в 19:00 в концертном зале "Колизей" в Санкт-Петербурге.',
+    genre: 'Концерт',
+    date: '2027-04-02',
+    time: '19:00',
+    datetimeISO: '2027-04-02T19:00:00+03:00',
+    venue: 'Филармония им. Д.Д. Шостаковича',
+    city: 'Санкт-Петербург',
+    currency: 'RUB',
+    buyTicketUrl:
+      'https://widget.kassir.ru/koncert/gruppa-stasa-namina-cvety-?type=A&key=e032c72c-da36-caea-8039-53dcef0e2a09&domain=spb.kassir.ru&id=5397',
+    posterImage: '/images/posters/tsveti-2027-04-02.jpg',
+    featured: false,
+    published: true,
+  },
 ]
