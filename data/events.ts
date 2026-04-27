@@ -21,25 +21,7 @@
 import type { Event } from '@/types/event'
 
 export const events: Event[] = [
-  {
-    id: 'evt-20260425-grishaeva',
-    slug: 'nonna-grishaeva-2026-04-25',
-    title: 'Творческий вечер-концерт заслуженной артистки Нонны Гришаевой',
-    description:
-      'Творческий вечер-концерт заслуженной артистки Нонны Гришаевой пройдет 25 апреля 2026 года в 19:00 в концертном зале «Колизей» в Санкт-Петербурге.',
-    genre: 'Творческий вечер',
-    date: '2026-04-25',
-    time: '19:00',
-    datetimeISO: '2026-04-25T19:00:00+03:00',
-    venue: 'Концертный зал «Колизей»',
-    city: 'Санкт-Петербург',
-    currency: 'RUB',
-    buyTicketUrl:
-      'https://widget.kassir.ru/koncert/tvorcheskiy-vecher-kontsert-zaslujennoy-artistki-nonnyi-grishaevoy?type=A&key=e032c72c-da36-caea-8039-53dcef0e2a09&domain=spb.kassir.ru&id=265870',
-    posterImage: '/images/posters/nonna-grishaeva-2026-04-25.jpeg',
-    featured: true,
-    published: true,
-  },
+
   {
     id: 'evt-20260710-bulanova',
     slug: 'tatyana-bulanova-2026-07-10',
